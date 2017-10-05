@@ -1,0 +1,11 @@
+{
+  "name": "ubotsnodeangular",
+  "version": "1.0.0",
+  "description": "projeto usando node e angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "antonio@ubots.com.br",
+  "license": "ISC"
+}
