@@ -51,8 +51,14 @@ const _ = require('lodash');
     });
 
     app.put('/user/:id', function(req,res){
-
-    });
+        //_.findIndex(users, function(o) { return o.user == 'barney'; });
+        _.remove(users,['id', Number(req.params.id)]);
+        users.push(req.body);
+        //users.slice(Number(req.params.id),1,req.body);
+       // var usuarioSelecionado = _.find(users, ['id', Number(req.params.id)]);
+       // var resultado = _.update(usuarioSelecionado,users,function(){return req.body});
+        res.json(users);
+    }); 
 }
 
 module.exports = userRouter;
