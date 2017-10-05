@@ -1,6 +1,7 @@
 
 const userRouter = function(app){
-
+const _ = require('lodash');
+    
     var users = [{
         id: 1,
         nome: "Antonio Miranda",
@@ -35,16 +36,23 @@ const userRouter = function(app){
         }]
     }];
 
-    app.get('/listusers',function (req,res){
+    app.get('/user',function (req,res){
         res.json(users);
     });
 
-    app.post('/newuser',function(req,res){
+    app.post('/user',function(req,res){
         users.push(req.body);
         res.json(users);
     });
 
-    
+    app.delete('/user/:id',function(req,res){
+        _.remove(users,['id', Number(req.params.id)]);
+        res.json(users);
+    });
+
+    app.put('/user/:id', function(req,res){
+
+    });
 }
 
 module.exports = userRouter;
