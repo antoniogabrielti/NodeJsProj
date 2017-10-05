@@ -5,7 +5,7 @@ const port = 3000;
 
 app.use(bodyParser.json());
 
-require('./controller/users.routes')(app);
+require('./model/users.routes')(app);
 
 app.listen(port, function(){
     console.log(`Servidor iniciado em localhost:${port}. Ctrl+C para encerrar…`);
