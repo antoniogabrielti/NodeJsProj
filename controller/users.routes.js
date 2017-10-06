@@ -17,14 +17,12 @@ const userRouter = function(app){
     });
 
     app.delete('/user/:id',function(req,res){
-        _.remove(users,['id', Number(req.params.id)]);
-        res.json(users);
+        res.json(repository.Delete(Number(req.params.id)));
     });
 
     app.put('/user/:id', function(req,res){
-        var i = _.findIndex(users, function(user) { return user.id === Number(req.params.id); });
-        users[i] = req.body;
-        res.json(users);
+        var user = new User(Number(req.body.id),req.body.nome,req.body.dataNasc,req.body.empresa,req.body.email,req.body.cadastrado);
+        res.json(repository.Update(user));
     }); 
 }
 
