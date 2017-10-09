@@ -4,7 +4,21 @@ var self = this;
 self.list;
 
 function UserList(){
-    self.list = [];
+    self.list = [{
+        "id": 1,
+        "nome": "Paulo Roberto",
+        "dataNasc": "1990-05-14",
+        "empresa": "Ubots",
+        "email": "paulo@ubots.com.br",
+        "cadastrado": false
+    },{
+        "id": 2,
+        "nome": "Antonio Miranda",
+        "dataNasc": "1990-06-23",
+        "empresa": "Ubots",
+        "email": "antonio@ubots.com.br",
+        "cadastrado": true
+    }];
  }
 
 UserList.prototype.Insert = function(user){
